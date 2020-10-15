@@ -1,0 +1,32 @@
+
+<!-- Edit method -->
+<div class="btn-group pull-right">
+<a (click)="editClient()" class="btn btn-secondary"> Edit</a>
+
+<!-- delete method -->
+<button type="button" class="btn btn-danger" (click)="deleteClient()">Delete</button>
+</div>
+
+<div *ngIf="client" class="card">
+    <h3 class="card-header">{{client.name}}</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <h4> Client ID:{{client._id}}</h4>
+        </div>
+        <div class="col-md-4">
+            <h3 class="pull-right">
+                Balance:
+                <span [class.text-danger]="!hasBalance"
+                    [class.text-success]="hasBalance">
+                    {{client.balance}}
+                </span>
+            </h3>
+        </div>
+        <div class="col-md-4">
+            <h3 class="pull-right">
+                Email:{{client.email}}
+            </h3>
+        </div>
+    </div>
+</div>
+
